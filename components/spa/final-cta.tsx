@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Check, Mail, Clock, DollarSign } from "lucide-react"
+import { ArrowRight, Check, Mail, Clock, DollarSign, Facebook } from "lucide-react"
 
 const benefits = [
   "Personalized treatment plan",
@@ -33,7 +33,7 @@ export function FinalCTA() {
             </h2>
             <p className="mb-10 text-lg text-primary-foreground/80 leading-relaxed">
               Book your session today and discover the treatments that are right for your goals.
-              Email Jessy directly to get started.
+              Email Jessy or message her on Facebook to get started.
             </p>
           </motion.div>
 
@@ -42,7 +42,7 @@ export function FinalCTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-col items-center gap-6"
+            className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
           >
             <Button
               size="lg"
@@ -51,10 +51,33 @@ export function FinalCTA() {
             >
               <a href="mailto:Sherrymarie26@gmail.com">
                 <Mail className="mr-2 h-5 w-5" />
-                Email Jessy to Book
+                Email Jessy
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
+            <Button
+              size="lg"
+              className="rounded-full bg-[#1877F2] px-10 py-6 text-lg text-white hover:bg-[#1877F2]/90"
+              asChild
+            >
+              <a
+                href="https://www.facebook.com/jessygetsfit#"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Facebook className="mr-2 h-5 w-5" />
+                Message on Facebook
+              </a>
+            </Button>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="mt-4"
+          >
             <a
               href="mailto:Sherrymarie26@gmail.com"
               className="text-primary-foreground/70 underline underline-offset-4 transition-colors hover:text-primary-foreground"

@@ -1,4 +1,4 @@
-import { MapPin, Mail, Clock } from "lucide-react"
+import { MapPin, Mail, Clock, Facebook } from "lucide-react"
 
 const footerLinks = {
   services: [
@@ -28,6 +28,15 @@ export function Footer() {
               Advanced non-surgical body sculpting, EMS facials & booty lifts in Cote St. Luc,
               Montreal. Over 5 years of experience delivering real, lasting results.
             </p>
+            <a
+              href="https://www.facebook.com/jessygetsfit#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary"
+            >
+              <Facebook className="h-4 w-4" />
+              Follow us on Facebook
+            </a>
           </div>
 
           {/* Services */}
@@ -87,6 +96,17 @@ export function Footer() {
                   className="text-sm text-muted-foreground transition-colors hover:text-primary"
                 >
                   Sherrymarie26@gmail.com
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Facebook className="h-4 w-4 shrink-0 text-primary" />
+                <a
+                  href="https://www.facebook.com/jessygetsfit#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                >
+                  Message on Facebook
                 </a>
               </li>
               <li className="flex items-start gap-3">

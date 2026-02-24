@@ -22,19 +22,15 @@ export function HeroSection() {
       {/* Background Image with Parallax */}
       <motion.div className="absolute inset-0 z-0" style={{ y }}>
         <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1712-A2KQ6GsrYoPBIMoahsTvwLjKf8eTWx.jpg"
-          alt="Body contouring treatment at Spa St. Marie"
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/background%20img-ODdnrLJoBWoeddwnicO4QQ7fZEotSY.jpg"
+          alt="Spa St. Marie floral background"
           fill
-          className="object-cover"
+          className="object-cover brightness-95"
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/15 to-black/40" />
       </motion.div>
-
-      {/* Ambient Decorative Elements */}
-      <div className="absolute top-1/4 right-[10%] z-[1] h-64 w-64 rounded-full bg-primary/10 blur-3xl" />
-      <div className="absolute bottom-1/4 left-[5%] z-[1] h-48 w-48 rounded-full bg-accent/10 blur-3xl" />
 
       {/* Content */}
       <motion.div
@@ -46,12 +42,12 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-6 text-sm font-medium uppercase tracking-[0.2em] text-white/70"
+            className="mb-6 text-sm font-medium uppercase tracking-[0.2em] text-[#5a2d3a]"
           >
             Cote St. Luc, Montreal
           </motion.p>
 
-          <h1 className="mb-8 font-serif text-5xl font-semibold leading-tight tracking-tight text-white md:text-7xl lg:text-8xl">
+          <h1 className="mb-8 font-serif text-5xl font-semibold leading-tight tracking-tight text-[#3a1525] md:text-7xl lg:text-8xl">
             {headlineWords.map((word, i) => (
               <motion.span
                 key={i}
@@ -76,7 +72,7 @@ export function HeroSection() {
                 delay: 0.4 + 3 * 0.12,
                 ease: [0.25, 0.4, 0.25, 1],
               }}
-              className="inline-block text-secondary"
+              className="inline-block text-[#7a3a50]"
             >
               {"Confidence starts here."}
             </motion.span>
@@ -86,7 +82,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.1 }}
-            className="mb-10 max-w-xl text-lg leading-relaxed text-white/80 md:text-xl"
+            className="mb-10 max-w-xl text-lg leading-relaxed text-[#4a2535]/80 md:text-xl"
           >
             Advanced EMS facials, body contouring & booty lifts -- non-invasive treatments
             designed for real, visible results. No surgery, no downtime.
@@ -111,7 +107,7 @@ export function HeroSection() {
             <Button
               size="lg"
               variant="outline"
-              className="rounded-full border-white/30 bg-white/10 px-8 text-base text-white backdrop-blur-sm hover:bg-white/20 hover:text-white"
+              className="rounded-full border-[#5a2d3a]/30 bg-[#5a2d3a]/10 px-8 text-base text-[#3a1525] backdrop-blur-sm hover:bg-[#5a2d3a]/20 hover:text-[#3a1525]"
               asChild
             >
               <a href="#results">See Real Results</a>
@@ -130,9 +126,9 @@ export function HeroSection() {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="flex h-10 w-6 items-start justify-center rounded-full border-2 border-white/30 pt-2"
+          className="flex h-10 w-6 items-start justify-center rounded-full border-2 border-[#5a2d3a]/30 pt-2"
         >
-          <div className="h-2 w-1 rounded-full bg-white/60" />
+          <div className="h-2 w-1 rounded-full bg-[#5a2d3a]/60" />
         </motion.div>
       </motion.div>
     </section>

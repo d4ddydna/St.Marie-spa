@@ -3,6 +3,8 @@
 import { motion, useSpring, useMotionValue, useInView } from "framer-motion"
 import { useRef, useEffect } from "react"
 import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { Facebook } from "lucide-react"
 
 function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: string }) {
   const ref = useRef<HTMLSpanElement>(null)
@@ -49,7 +51,7 @@ export function MeetJessy() {
           >
             <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/b656e57c-0bfb-40cf-b27c-3e268e8d8e89-xU3d1yrw2go5zFcjQURNVgc9LERfTs.jpg"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/b656e57c-0bfb-40cf-b27c-3e268e8d8e89-poy6RmycSxR6BCJptXxudDrAWkiOq9.png"
                 alt="Jessy, founder of Spa St. Marie"
                 fill
                 className="object-cover object-top"
@@ -94,6 +96,24 @@ export function MeetJessy() {
                 treatment plan should be, too. My job is to listen to your goals and guide you
                 to the results you deserve."`}
               </p>
+            </div>
+
+            {/* Facebook CTA */}
+            <div className="mb-8">
+              <Button
+                size="lg"
+                className="rounded-full bg-[#1877F2] px-8 text-white hover:bg-[#1877F2]/90"
+                asChild
+              >
+                <a
+                  href="https://www.facebook.com/jessygetsfit#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Facebook className="mr-2 h-5 w-5" />
+                  Message Jessy on Facebook
+                </a>
+              </Button>
             </div>
 
             <div className="grid grid-cols-3 gap-6">

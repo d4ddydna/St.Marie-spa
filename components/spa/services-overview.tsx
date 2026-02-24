@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { ArrowUpRight, Clock, DollarSign } from "lucide-react"
+import { ArrowUpRight, Clock } from "lucide-react"
 
 const services = [
   {
@@ -17,7 +17,7 @@ const services = [
     title: "Body Contouring",
     description:
       "Target stubborn areas with precision EMS technology. Choose 2 areas per session for sculpting treatments that reduce fat and tighten skin for a smoother silhouette.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/14461-AxF01Kb2LzbrtZcd9zBzOflnJzeobh.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5957bbfe-dfae-4413-a7dc-bca0f067097f-eyZrCxLLAvwL2Qd2wdsMHsXvssrVrb.jpg",
     tag: "Best Seller",
     duration: "45 min",
   },
@@ -25,7 +25,7 @@ const services = [
     title: "Non-Surgical Booty Lift",
     description:
       "Lift, firm, and shape your glutes without surgery. Our EMS-based treatment builds and tones muscle for a natural, lifted result.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a22747e4-049d-44b0-bf16-22f7575671c1-cV94D0BTwK6He4R9elCA8dpp7OiBNm.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/wmremove-transformed-bEr6Xlc9allN1D3ZZPe8Wz5ojYmtAq.png",
     tag: "Trending",
     duration: "30 min",
   },
@@ -33,7 +33,7 @@ const services = [
     title: "Infrared Blanket Treatment",
     description:
       "Deep infrared heat promotes detoxification, reduces water retention, and soothes muscles while you relax in total comfort.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kaboompics_botox-fillers-facial-treatments-skincare-in-aesthetic-medicine-clinic-39636-LHU0Ju07psGzhAfmLeRbMP9NdKlLge.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/14461-AxF01Kb2LzbrtZcd9zBzOflnJzeobh.jpg",
     tag: "Wellness",
     duration: "30 min",
   },

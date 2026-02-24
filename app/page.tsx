@@ -13,7 +13,7 @@ import { StickyBooking } from "@/components/spa/sticky-booking"
 
 export default function HomePage() {
   return (
-    <main>
+    <main className="relative">
       <ScrollProgress />
       <Navbar />
       <HeroSection />

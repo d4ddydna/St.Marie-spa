@@ -43,23 +43,17 @@ export function Navbar() {
         }`}
       >
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8">
-          <a href="#" className="flex items-center gap-3">
-            <div className="relative h-10 w-10 overflow-hidden rounded-full">
+          <a href="#" className="flex items-center gap-2">
+            <div className="relative h-12 w-32 overflow-hidden">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/f06ea4a5-e6e4-40bd-9b5f-dae84786cedd-bijaWCPNLAnDhCAU0ag1w7X3kzv18l.jpg"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-nR3BRwIeqQo17A2UcNd40i9KrM5PdT.jpg"
                 alt="Spa St. Marie logo"
                 fill
-                className="object-cover"
-                sizes="40px"
+                className="object-contain"
+                sizes="128px"
+                priority
               />
             </div>
-            <span
-              className={`font-serif text-2xl font-semibold tracking-tight transition-colors duration-500 ${
-                scrolled ? "text-foreground" : "text-white"
-              }`}
-            >
-              Spa St. Marie
-            </span>
           </a>
 
           <div className="hidden items-center gap-8 md:flex">
@@ -68,7 +62,7 @@ export function Navbar() {
                 key={link.label}
                 href={link.href}
                 className={`text-sm font-medium tracking-wide transition-colors duration-300 hover:text-primary ${
-                  scrolled ? "text-foreground/70" : "text-white/80"
+                  scrolled ? "text-foreground/70" : "text-[#3a1525]/70"
                 }`}
               >
                 {link.label}
@@ -86,7 +80,7 @@ export function Navbar() {
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className={`md:hidden transition-colors ${
-              scrolled ? "text-foreground" : "text-white"
+              scrolled ? "text-foreground" : "text-[#3a1525]"
             }`}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
