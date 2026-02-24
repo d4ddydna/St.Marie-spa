@@ -15,16 +15,17 @@ const sliderPairs = [
     after: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/after%202-ggs3ngjniFbCKmlKw9nBE4byev0A7K.jpg",
     label: "Client 2 -- 6 Sessions, Visible Results",
   },
+  {
+    before: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-ez6Gek2NOVodIDjpoREOOUhwWUXmJV.png",
+    after: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a571e895-2a24-4566-8915-5465feda2125-MIb4Prc3gHPKXe9Ur1mRz15dfFPuDV.jpg",
+    label: "Client 3 -- Slim Wave Body Sculpting",
+  },
 ]
 
 const moreResults = [
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ec1b78d4-0644-45c8-9f82-35b778d14e5d-rgubNsqRq0CtwqWuNaI2hYSXG4mShu.jpg",
     alt: "Before and after body contouring - side view, 6 sessions",
-  },
-  {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/25c7edc0-4c85-42ff-ad75-e9581157b609-dJBKXiBAChX7DX79IrZ3fx3xLAuDPW.jpg",
-    alt: "7 inches down and feeling great - real client results",
   },
   {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-aMf8BEJlorWYP6Dh83e12eg7DHflWe.png",
@@ -85,7 +86,7 @@ function BeforeAfterSlider({
           alt="After treatment"
           fill
           className="object-cover"
-          sizes="(max-width: 768px) 100vw, 50vw"
+          sizes="(max-width: 768px) 100vw, 33vw"
           draggable={false}
         />
 
@@ -99,7 +100,7 @@ function BeforeAfterSlider({
             alt="Before treatment"
             fill
             className="object-cover"
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 768px) 100vw, 33vw"
             draggable={false}
           />
         </div>
@@ -171,7 +172,7 @@ export function BeforeAfter() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2"
+          className="mx-auto grid max-w-5xl gap-8 md:grid-cols-3"
         >
           {sliderPairs.map((pair) => (
             <BeforeAfterSlider
@@ -189,12 +190,12 @@ export function BeforeAfter() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mx-auto mt-16 max-w-5xl"
+          className="mx-auto mt-16 max-w-4xl"
         >
           <p className="mb-8 text-center text-sm font-medium uppercase tracking-[0.2em] text-primary">
             More Results
           </p>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2">
             {moreResults.map((result) => (
               <div
                 key={result.alt}
@@ -205,7 +206,7 @@ export function BeforeAfter() {
                   alt={result.alt}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
             ))}

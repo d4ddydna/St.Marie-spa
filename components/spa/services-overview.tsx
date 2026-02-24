@@ -9,7 +9,7 @@ const services = [
     title: "EMS Facial",
     description:
       "Sculpt and lift your facial contours with advanced electrical muscle stimulation. Tighten skin, reduce fine lines, and reveal a naturally lifted look.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kaboompics_botox-fillers-facial-treatments-skincare-in-aesthetic-medicine-clinic-39542-OHyuK3TQFOr39rBxb4rWnWhs3L5LHU.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/4590-PJNc56AYXzSWCxfjOH9xnugJJ23J9J.jpg",
     tag: "Most Popular",
     duration: "30 min",
   },
@@ -17,7 +17,7 @@ const services = [
     title: "Body Contouring",
     description:
       "Target stubborn areas with precision EMS technology. Choose 2 areas per session for sculpting treatments that reduce fat and tighten skin for a smoother silhouette.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5957bbfe-dfae-4413-a7dc-bca0f067097f-eyZrCxLLAvwL2Qd2wdsMHsXvssrVrb.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5957bbfe-dfae-4413-a7dc-bca0f067097f-UOGG8XzllfcOobquIZbsWooysy1JyF.jpg",
     tag: "Best Seller",
     duration: "45 min",
   },
@@ -33,7 +33,7 @@ const services = [
     title: "Infrared Blanket Treatment",
     description:
       "Deep infrared heat promotes detoxification, reduces water retention, and soothes muscles while you relax in total comfort.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/14461-AxF01Kb2LzbrtZcd9zBzOflnJzeobh.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1712-A2KQ6GsrYoPBIMoahsTvwLjKf8eTWx.jpg",
     tag: "Wellness",
     duration: "30 min",
   },

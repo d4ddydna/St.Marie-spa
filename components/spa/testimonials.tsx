@@ -5,31 +5,45 @@ import { Star, Quote } from "lucide-react"
 
 const testimonials = [
   {
-    name: "Sophie L.",
-    treatment: "Body Contouring",
+    name: "Vittoria M.",
+    treatment: "Spa St. Marie Client",
     quote:
-      "I was skeptical at first, but after my third session I could already see a difference. By session six, I had lost inches around my waist. I feel like myself again.",
+      "She's such an amazing person!! Really cares for each and every client. She's very professional, highly educated and highly recommend! xoxo",
     rating: 5,
   },
   {
-    name: "Nadia M.",
-    treatment: "EMS Facial",
+    name: "Vero N.",
+    treatment: "Slim Wave -- Abdomen",
     quote:
-      "My jawline is more defined, my skin feels tighter, and people keep asking what I've done differently. This is the best-kept secret in Montreal.",
+      "Just finished up 6 sessions of slim wave targeting my abdomen. I lost 7 inches total, and will have my wedding dress fitting like a glove now. Thanks! Great service, affordable prices. Professional, clean.",
     rating: 5,
   },
   {
-    name: "Camille R.",
-    treatment: "Non-Surgical Booty Lift",
+    name: "Netzl J.",
+    treatment: "Slim Wave Experience",
     quote:
-      "I never thought I could get results like this without surgery. Jessy made me feel so comfortable, and the results speak for themselves. I'm obsessed.",
+      "I had my first slim wave experience today and it was amazing. I feel great. I'm definitely going back again. Thank you.",
     rating: 5,
   },
   {
-    name: "Isabelle D.",
-    treatment: "Infrared Body Wrap",
+    name: "Lisa M.",
+    treatment: "Therapeutic Detox Session",
     quote:
-      "The most relaxing treatment I've ever experienced, and I woke up the next day feeling lighter and less bloated. It's become my monthly self-care ritual.",
+      "Spa St. Marie is the place to go for a relaxing, therapeutic detox session. Jessy has great prices hands down, she is very educated in the field and her service is phenomenal. Very clean and zen space, up to par with safety measures! I highly recommend anyone looking for an exceptional service to book an appointment!",
+    rating: 5,
+  },
+  {
+    name: "Verified Client",
+    treatment: "Ear Candling, EMS Facial, Booty Lift",
+    quote:
+      "Booking was very easy. The experience was so relaxed. I felt absolutely valued and cared for. The EMS specialist is amazing -- 5 stars! I loved the chat. Would recommend 5 out of 5.",
+    rating: 5,
+  },
+  {
+    name: "Verified Client",
+    treatment: "EMS Body Contouring",
+    quote:
+      "Very responsible, professional, and kind. I felt absolutely valued during my visit. What I enjoyed most was the flexibility to schedule the appointments. Would recommend 5 out of 5.",
     rating: 5,
   },
 ]
@@ -64,11 +78,14 @@ export function Testimonials() {
           className="mb-16 text-center"
         >
           <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-primary">
-            Client Stories
+            Client Reviews
           </p>
           <h2 className="font-serif text-3xl font-semibold leading-tight text-foreground md:text-4xl lg:text-5xl text-balance">
             What our clients say
           </h2>
+          <p className="mx-auto mt-4 max-w-lg text-muted-foreground leading-relaxed">
+            Real reviews from real clients on Facebook and our online review forms.
+          </p>
         </motion.div>
 
         <motion.div
@@ -76,11 +93,11 @@ export function Testimonials() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid gap-6 md:grid-cols-2"
+          className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
         >
-          {testimonials.map((testimonial) => (
+          {testimonials.map((testimonial, index) => (
             <motion.div
-              key={testimonial.name}
+              key={`${testimonial.name}-${index}`}
               variants={itemVariants}
               className="relative rounded-2xl border border-border bg-card p-8 lg:p-10"
             >
