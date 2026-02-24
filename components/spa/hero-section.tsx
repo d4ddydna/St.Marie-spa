@@ -22,14 +22,14 @@ export function HeroSection() {
       {/* Background Image with Parallax */}
       <motion.div className="absolute inset-0 z-0" style={{ y }}>
         <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/background%20img-ODdnrLJoBWoeddwnicO4QQ7fZEotSY.jpg"
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/background%20img-N2HdKYEMU7ucFjMdsF86asFO3h3ACf.jpg"
           alt="Spa St. Marie floral background"
           fill
-          className="object-cover brightness-95"
+          className="object-cover"
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/15 to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-white/10 to-white/40" />
       </motion.div>
 
       {/* Content */}
@@ -96,7 +96,7 @@ export function HeroSection() {
           >
             <Button
               size="lg"
-              className="rounded-full bg-primary px-8 text-base text-primary-foreground hover:bg-primary/90"
+              className="rounded-full bg-primary px-8 text-base text-primary-foreground hover:bg-primary/90 transition-transform hover:scale-105 active:scale-95"
               asChild
             >
               <a href="#contact">
@@ -107,7 +107,7 @@ export function HeroSection() {
             <Button
               size="lg"
               variant="outline"
-              className="rounded-full border-[#5a2d3a]/30 bg-[#5a2d3a]/10 px-8 text-base text-[#3a1525] backdrop-blur-sm hover:bg-[#5a2d3a]/20 hover:text-[#3a1525]"
+              className="rounded-full border-[#5a2d3a]/30 bg-[#5a2d3a]/10 px-8 text-base text-[#3a1525] backdrop-blur-sm hover:bg-[#5a2d3a]/20 hover:text-[#3a1525] transition-transform hover:scale-105 active:scale-95"
               asChild
             >
               <a href="#results">See Real Results</a>

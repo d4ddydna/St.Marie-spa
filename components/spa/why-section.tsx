@@ -72,11 +72,17 @@ export function WhySection() {
             <motion.div
               key={reason.title}
               variants={itemVariants}
-              className="group rounded-2xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-lg lg:p-10"
+              whileHover={{ scale: 1.04 }}
+              transition={{ duration: 0.3 }}
+              className="group cursor-default rounded-2xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-xl lg:p-10"
             >
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-secondary">
-                <reason.icon className="h-6 w-6 text-primary" />
-              </div>
+              <motion.div
+                className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-secondary"
+                whileHover={{ rotate: 30 }}
+                transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              >
+                <reason.icon className="h-6 w-6 text-primary transition-colors duration-300 group-hover:text-accent" />
+              </motion.div>
               <h3 className="mb-3 font-serif text-xl font-semibold text-foreground">
                 {reason.title}
               </h3>

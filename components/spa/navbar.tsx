@@ -36,7 +36,7 @@ export function Navbar() {
   return (
     <>
       <motion.header
-        className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
             ? "bg-background/90 backdrop-blur-lg border-b border-border shadow-sm"
             : "bg-transparent"
@@ -44,16 +44,21 @@ export function Navbar() {
       >
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8">
           <a href="#" className="flex items-center gap-2">
-            <div className="relative h-12 w-32 overflow-hidden">
+            <div className="relative h-14 w-14 overflow-hidden">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-nR3BRwIeqQo17A2UcNd40i9KrM5PdT.jpg"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo%20trans%20bg-xbAaMNwxYvbUlvwLsdZgnrV9TEFuZH.png"
                 alt="Spa St. Marie logo"
                 fill
                 className="object-contain"
-                sizes="128px"
+                sizes="56px"
                 priority
               />
             </div>
+            <span className={`font-serif text-lg font-semibold tracking-tight transition-colors duration-300 ${
+              scrolled ? "text-foreground" : "text-[#3a1525]"
+            }`}>
+              Spa St. Marie
+            </span>
           </a>
 
           <div className="hidden items-center gap-8 md:flex">
@@ -70,7 +75,7 @@ export function Navbar() {
             ))}
             <Button
               size="sm"
-              className="rounded-full bg-primary px-6 text-primary-foreground hover:bg-primary/90"
+              className="rounded-full bg-primary px-6 text-primary-foreground hover:bg-primary/90 transition-transform hover:scale-105 active:scale-95"
               asChild
             >
               <a href="mailto:Sherrymarie26@gmail.com">Book a Session</a>
@@ -97,15 +102,18 @@ export function Navbar() {
           mobileOpen ? "pointer-events-auto" : "pointer-events-none"
         }`}
       >
-        {navLinks.map((link) => (
-          <a
+        {navLinks.map((link, i) => (
+          <motion.a
             key={link.label}
             href={link.href}
             onClick={() => setMobileOpen(false)}
+            initial={false}
+            animate={mobileOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+            transition={{ delay: mobileOpen ? 0.1 + i * 0.05 : 0, duration: 0.3 }}
             className="font-serif text-2xl font-medium text-foreground transition-colors hover:text-primary"
           >
             {link.label}
-          </a>
+          </motion.a>
         ))}
         <Button
           size="lg"

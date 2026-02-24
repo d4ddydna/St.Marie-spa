@@ -80,13 +80,19 @@ export function HowItWorks() {
             <motion.div
               key={step.number}
               variants={itemVariants}
-              className="relative flex flex-col items-center text-center"
+              whileHover={{ y: -6 }}
+              transition={{ duration: 0.3 }}
+              className="group relative flex flex-col items-center text-center"
             >
-              <div className="relative z-10 mb-6 flex h-24 w-24 items-center justify-center rounded-full border-2 border-primary/20 bg-card">
+              <motion.div
+                className="relative z-10 mb-6 flex h-24 w-24 items-center justify-center rounded-full border-2 border-primary/20 bg-card transition-shadow duration-300 group-hover:shadow-lg group-hover:border-primary/40"
+                whileHover={{ scale: 1.08 }}
+                transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              >
                 <span className="font-serif text-2xl font-semibold text-primary">
                   {step.number}
                 </span>
-              </div>
+              </motion.div>
               <h3 className="mb-3 font-serif text-lg font-semibold text-foreground">
                 {step.title}
               </h3>

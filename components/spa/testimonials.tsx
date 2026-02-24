@@ -99,7 +99,9 @@ export function Testimonials() {
             <motion.div
               key={`${testimonial.name}-${index}`}
               variants={itemVariants}
-              className="relative rounded-2xl border border-border bg-card p-8 lg:p-10"
+              whileHover={{ y: -4, scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+              className="relative rounded-2xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-xl lg:p-10"
             >
               <Quote className="absolute top-6 right-6 h-8 w-8 text-secondary" />
               <div className="mb-4 flex gap-1">

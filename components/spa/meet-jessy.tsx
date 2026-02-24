@@ -49,12 +49,12 @@ export function MeetJessy() {
             transition={{ duration: 0.7, ease: [0.25, 0.4, 0.25, 1] }}
             className="relative"
           >
-            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
+            <div className="group relative aspect-[3/4] overflow-hidden rounded-2xl">
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/b656e57c-0bfb-40cf-b27c-3e268e8d8e89-poy6RmycSxR6BCJptXxudDrAWkiOq9.png"
                 alt="Jessy, founder of Spa St. Marie"
                 fill
-                className="object-cover object-top"
+                className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
@@ -102,7 +102,7 @@ export function MeetJessy() {
             <div className="mb-8">
               <Button
                 size="lg"
-                className="rounded-full bg-[#1877F2] px-8 text-white hover:bg-[#1877F2]/90"
+                className="rounded-full bg-[#1877F2] px-8 text-white hover:bg-[#1877F2]/90 transition-transform hover:scale-105 active:scale-95"
                 asChild
               >
                 <a

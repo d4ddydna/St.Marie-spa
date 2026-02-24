@@ -17,7 +17,7 @@ const services = [
     title: "Body Contouring",
     description:
       "Target stubborn areas with precision EMS technology. Choose 2 areas per session for sculpting treatments that reduce fat and tighten skin for a smoother silhouette.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5957bbfe-dfae-4413-a7dc-bca0f067097f-UOGG8XzllfcOobquIZbsWooysy1JyF.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/14461-AxF01Kb2LzbrtZcd9zBzOflnJzeobh.jpg",
     tag: "Best Seller",
     duration: "45 min",
   },
@@ -119,6 +119,8 @@ export function ServicesOverview() {
               key={service.title}
               href="#contact"
               variants={itemVariants}
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.3 }}
               className="group relative overflow-hidden rounded-2xl bg-card border border-border"
             >
               <div className="relative aspect-[16/10] overflow-hidden">
@@ -126,7 +128,7 @@ export function ServicesOverview() {
                   src={service.image}
                   alt={service.title}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -143,7 +145,7 @@ export function ServicesOverview() {
                   <h3 className="font-serif text-xl font-semibold text-foreground">
                     {service.title}
                   </h3>
-                  <ArrowUpRight className="h-5 w-5 text-muted-foreground transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary" />
+                  <ArrowUpRight className="h-5 w-5 text-muted-foreground transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-primary" />
                 </div>
                 <p className="leading-relaxed text-muted-foreground">{service.description}</p>
               </div>

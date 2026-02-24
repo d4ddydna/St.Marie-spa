@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { useState, useRef, useCallback } from "react"
 import Image from "next/image"
+import { ArrowLeftRight } from "lucide-react"
 
 const sliderPairs = [
   {
@@ -68,7 +69,11 @@ function BeforeAfterSlider({
   }
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-lg">
+    <motion.div
+      whileHover={{ y: -4 }}
+      transition={{ duration: 0.3 }}
+      className="overflow-hidden rounded-2xl border border-border bg-card shadow-lg"
+    >
       <div
         ref={containerRef}
         className="relative aspect-[3/4] w-full cursor-col-resize select-none overflow-hidden"
@@ -105,42 +110,29 @@ function BeforeAfterSlider({
           />
         </div>
 
-        {/* Slider line & handle */}
+        {/* Slider line & handle - inspired by reference design */}
         <div
-          className="absolute top-0 bottom-0 z-10 w-0.5 bg-white shadow-lg"
+          className="absolute top-0 bottom-0 z-10 w-0.5 bg-white/80"
           style={{ left: `${sliderPosition}%` }}
         >
-          <div className="absolute top-1/2 left-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white bg-white/90 shadow-lg backdrop-blur-sm">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              className="text-foreground"
-            >
-              <path
-                d="M6 4L2 10L6 16M14 4L18 10L14 16"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+          {/* Circular swap handle */}
+          <div className="absolute top-1/2 left-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white shadow-xl transition-transform hover:scale-110">
+            <ArrowLeftRight className="h-5 w-5 text-primary" />
           </div>
         </div>
 
-        {/* Labels */}
-        <span className="absolute top-4 left-4 z-20 rounded-full bg-black/60 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">
+        {/* Before / After pill labels */}
+        <span className="absolute top-4 left-4 z-20 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground shadow-md">
           Before
         </span>
-        <span className="absolute top-4 right-4 z-20 rounded-full bg-black/60 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">
+        <span className="absolute top-4 right-4 z-20 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground shadow-md">
           After
         </span>
       </div>
       <div className="p-4 text-center">
         <p className="text-sm text-muted-foreground">{label}</p>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
@@ -174,13 +166,20 @@ export function BeforeAfter() {
           transition={{ duration: 0.6 }}
           className="mx-auto grid max-w-5xl gap-8 md:grid-cols-3"
         >
-          {sliderPairs.map((pair) => (
-            <BeforeAfterSlider
+          {sliderPairs.map((pair, i) => (
+            <motion.div
               key={pair.label}
-              before={pair.before}
-              after={pair.after}
-              label={pair.label}
-            />
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: i * 0.15 }}
+            >
+              <BeforeAfterSlider
+                before={pair.before}
+                after={pair.after}
+                label={pair.label}
+              />
+            </motion.div>
           ))}
         </motion.div>
 
@@ -196,19 +195,24 @@ export function BeforeAfter() {
             More Results
           </p>
           <div className="grid gap-6 md:grid-cols-2">
-            {moreResults.map((result) => (
-              <div
+            {moreResults.map((result, i) => (
+              <motion.div
                 key={result.alt}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                whileHover={{ scale: 1.03 }}
                 className="relative aspect-square overflow-hidden rounded-2xl border border-border shadow-md"
               >
                 <Image
                   src={result.src}
                   alt={result.alt}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>

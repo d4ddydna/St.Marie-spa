@@ -46,7 +46,7 @@ export function FinalCTA() {
           >
             <Button
               size="lg"
-              className="rounded-full bg-white px-10 py-6 text-lg text-primary hover:bg-white/90"
+              className="rounded-full bg-white px-10 py-6 text-lg text-primary hover:bg-white/90 transition-transform hover:scale-105 active:scale-95"
               asChild
             >
               <a href="mailto:Sherrymarie26@gmail.com">
@@ -57,7 +57,7 @@ export function FinalCTA() {
             </Button>
             <Button
               size="lg"
-              className="rounded-full bg-[#1877F2] px-10 py-6 text-lg text-white hover:bg-[#1877F2]/90"
+              className="rounded-full bg-[#1877F2] px-10 py-6 text-lg text-white hover:bg-[#1877F2]/90 transition-transform hover:scale-105 active:scale-95"
               asChild
             >
               <a
