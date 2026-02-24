@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 
-const headlineWords = ["Sculpt.", "Lift.", "Tone.", "Without", "Surgery."]
+const headlineWords = ["Glow.", "Sculpt.", "Lift."]
 
 export function HeroSection() {
   const ref = useRef<HTMLElement>(null)
@@ -22,8 +22,8 @@ export function HeroSection() {
       {/* Background Image with Parallax */}
       <motion.div className="absolute inset-0 z-0" style={{ y }}>
         <Image
-          src="/images/hero-spa.jpg"
-          alt="Luxury spa treatment room at Spa St. Marie"
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1712-A2KQ6GsrYoPBIMoahsTvwLjKf8eTWx.jpg"
+          alt="Body contouring treatment at Spa St. Marie"
           fill
           className="object-cover"
           priority
@@ -62,13 +62,24 @@ export function HeroSection() {
                   delay: 0.4 + i * 0.12,
                   ease: [0.25, 0.4, 0.25, 1],
                 }}
-                className={`inline-block ${i < 3 ? "mr-3 md:mr-5" : "mr-3 md:mr-5"} ${
-                  i === 4 ? "text-secondary" : ""
-                }`}
+                className="inline-block mr-3 md:mr-5"
               >
                 {word}
               </motion.span>
             ))}
+            <br />
+            <motion.span
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: 0.4 + 3 * 0.12,
+                ease: [0.25, 0.4, 0.25, 1],
+              }}
+              className="inline-block text-secondary"
+            >
+              {"Confidence starts here."}
+            </motion.span>
           </h1>
 
           <motion.p
@@ -77,8 +88,8 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 1.1 }}
             className="mb-10 max-w-xl text-lg leading-relaxed text-white/80 md:text-xl"
           >
-            Advanced EMS facials & body contouring treatments designed for real, visible results
-            -- without surgery, without downtime.
+            Advanced EMS facials, body contouring & booty lifts -- non-invasive treatments
+            designed for real, visible results. No surgery, no downtime.
           </motion.p>
 
           <motion.div
@@ -93,7 +104,7 @@ export function HeroSection() {
               asChild
             >
               <a href="#contact">
-                Book Free Consultation
+                Book Your Session
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>

@@ -5,27 +5,27 @@ import { motion } from "framer-motion"
 const steps = [
   {
     number: "01",
-    title: "Free Consultation",
+    title: "Book Your Session",
     description:
-      "We start with an in-depth conversation about your goals, lifestyle, and expectations. No pressure, no commitments -- just honest guidance.",
+      "Reach out by email to book your first appointment. We will discuss your goals and create a plan tailored to you.",
   },
   {
     number: "02",
-    title: "Personalized Plan",
+    title: "Your Treatment Plan",
     description:
-      "Based on your unique body and goals, we design a custom treatment plan combining the most effective technologies for your results.",
+      "6 sessions, done twice a week with 1-2 days between sessions, completed over the span of 3 weeks for optimal results.",
   },
   {
     number: "03",
-    title: "Treatment Sessions",
+    title: "Relax & Transform",
     description:
-      "Relax in our luxury treatment rooms while our advanced technology works its magic. Sessions are comfortable and typically last 30-60 minutes.",
+      "Sessions last 30-45 minutes depending on the treatment. Relax while our advanced EMS technology works its magic.",
   },
   {
     number: "04",
-    title: "Visible Results",
+    title: "See Real Results",
     description:
-      "Watch your body transform over the coming weeks. We track your progress and adjust your plan to ensure you achieve your goals.",
+      "Watch your body transform over the course of your sessions. Clients have seen up to 7 inches lost in a single treatment plan.",
   },
 ]
 

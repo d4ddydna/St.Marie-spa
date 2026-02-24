@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { motion, useScroll, useMotionValueEvent } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 const navLinks = [
   { label: "Services", href: "#services" },
@@ -41,8 +42,17 @@ export function Navbar() {
             : "bg-transparent"
         }`}
       >
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-          <a href="#" className="flex items-center gap-2">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8">
+          <a href="#" className="flex items-center gap-3">
+            <div className="relative h-10 w-10 overflow-hidden rounded-full">
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/f06ea4a5-e6e4-40bd-9b5f-dae84786cedd-bijaWCPNLAnDhCAU0ag1w7X3kzv18l.jpg"
+                alt="Spa St. Marie logo"
+                fill
+                className="object-cover"
+                sizes="40px"
+              />
+            </div>
             <span
               className={`font-serif text-2xl font-semibold tracking-tight transition-colors duration-500 ${
                 scrolled ? "text-foreground" : "text-white"
@@ -69,7 +79,7 @@ export function Navbar() {
               className="rounded-full bg-primary px-6 text-primary-foreground hover:bg-primary/90"
               asChild
             >
-              <a href="#contact">Book Free Consultation</a>
+              <a href="mailto:Sherrymarie26@gmail.com">Book a Session</a>
             </Button>
           </div>
 
@@ -108,8 +118,8 @@ export function Navbar() {
           className="mt-4 rounded-full bg-primary px-8 text-primary-foreground hover:bg-primary/90"
           asChild
         >
-          <a href="#contact" onClick={() => setMobileOpen(false)}>
-            Book Free Consultation
+          <a href="mailto:Sherrymarie26@gmail.com" onClick={() => setMobileOpen(false)}>
+            Book a Session
           </a>
         </Button>
       </motion.div>

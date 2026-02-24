@@ -2,36 +2,40 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { ArrowUpRight } from "lucide-react"
+import { ArrowUpRight, Clock, DollarSign } from "lucide-react"
 
 const services = [
   {
     title: "EMS Facial",
     description:
       "Sculpt and lift your facial contours with advanced electrical muscle stimulation. Tighten skin, reduce fine lines, and reveal a naturally lifted look.",
-    image: "/images/service-ems-facial.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kaboompics_botox-fillers-facial-treatments-skincare-in-aesthetic-medicine-clinic-39542-OHyuK3TQFOr39rBxb4rWnWhs3L5LHU.jpg",
     tag: "Most Popular",
+    duration: "30 min",
   },
   {
     title: "Body Contouring",
     description:
-      "Target stubborn areas with precision technology that reduces fat cells and tightens skin for a smoother, more sculpted silhouette.",
-    image: "/images/service-body-contouring.jpg",
+      "Target stubborn areas with precision EMS technology. Choose 2 areas per session for sculpting treatments that reduce fat and tighten skin for a smoother silhouette.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/14461-AxF01Kb2LzbrtZcd9zBzOflnJzeobh.jpg",
     tag: "Best Seller",
+    duration: "45 min",
   },
   {
     title: "Non-Surgical Booty Lift",
     description:
       "Lift, firm, and shape your glutes without surgery. Our EMS-based treatment builds and tones muscle for a natural, lifted result.",
-    image: "/images/service-booty-lift.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a22747e4-049d-44b0-bf16-22f7575671c1-cV94D0BTwK6He4R9elCA8dpp7OiBNm.jpg",
     tag: "Trending",
+    duration: "30 min",
   },
   {
-    title: "Infrared Body Wrap",
+    title: "Infrared Blanket Treatment",
     description:
       "Deep infrared heat promotes detoxification, reduces water retention, and soothes muscles while you relax in total comfort.",
-    image: "/images/service-infrared.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kaboompics_botox-fillers-facial-treatments-skincare-in-aesthetic-medicine-clinic-39636-LHU0Ju07psGzhAfmLeRbMP9NdKlLge.jpg",
     tag: "Wellness",
+    duration: "30 min",
   },
 ]
 
@@ -74,8 +78,33 @@ export function ServicesOverview() {
           </div>
           <p className="max-w-md text-muted-foreground leading-relaxed">
             Each treatment is carefully selected for proven effectiveness and tailored to deliver
-            the results Montreal women are looking for.
+            the results you are looking for.
           </p>
+        </motion.div>
+
+        {/* Pricing Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mb-10 rounded-2xl border border-primary/20 bg-secondary/50 p-6 lg:p-8"
+        >
+          <div className="flex flex-col items-center gap-4 text-center md:flex-row md:justify-between md:text-left">
+            <div>
+              <h3 className="font-serif text-xl font-semibold text-foreground">Special Pricing</h3>
+              <p className="mt-1 text-muted-foreground leading-relaxed">
+                6 sessions for <span className="font-semibold text-primary line-through">$390</span>{" "}
+                <span className="font-semibold text-foreground">$310</span> | Single session{" "}
+                <span className="font-semibold text-primary line-through">$65</span>{" "}
+                <span className="font-semibold text-foreground">$55</span>
+              </p>
+            </div>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <Clock className="h-4 w-4 text-primary" />
+              <span>6 sessions (2x/week) over 3 weeks</span>
+            </div>
+          </div>
         </motion.div>
 
         <motion.div
@@ -103,6 +132,10 @@ export function ServicesOverview() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                 <span className="absolute top-4 left-4 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-foreground backdrop-blur-sm">
                   {service.tag}
+                </span>
+                <span className="absolute top-4 right-4 flex items-center gap-1 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-foreground backdrop-blur-sm">
+                  <Clock className="h-3 w-3" />
+                  {service.duration}
                 </span>
               </div>
               <div className="p-6 lg:p-8">

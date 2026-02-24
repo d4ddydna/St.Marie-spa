@@ -1,16 +1,15 @@
-import { MapPin, Phone, Mail, Clock } from "lucide-react"
+import { MapPin, Mail, Clock } from "lucide-react"
 
 const footerLinks = {
   services: [
     { label: "EMS Facial", href: "#services" },
     { label: "Body Contouring", href: "#services" },
     { label: "Non-Surgical Booty Lift", href: "#services" },
-    { label: "Infrared Body Wrap", href: "#services" },
+    { label: "Infrared Blanket Treatment", href: "#services" },
   ],
   company: [
-    { label: "About Us", href: "#about" },
+    { label: "About Jessy", href: "#about" },
     { label: "Results", href: "#results" },
-    { label: "Blog", href: "#" },
     { label: "Contact", href: "#contact" },
   ],
 }
@@ -26,8 +25,8 @@ export function Footer() {
               Spa St. Marie
             </span>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Advanced non-surgical body sculpting and EMS facials in Cote St. Luc, Montreal.
-              Science-backed treatments for real, lasting results.
+              Advanced non-surgical body sculpting, EMS facials & booty lifts in Cote St. Luc,
+              Montreal. Over 5 years of experience delivering real, lasting results.
             </p>
           </div>
 
@@ -82,23 +81,20 @@ export function Footer() {
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="h-4 w-4 shrink-0 text-primary" />
-                <a href="tel:+15145551234" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  (514) 555-1234
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
                 <Mail className="h-4 w-4 shrink-0 text-primary" />
-                <a href="mailto:hello@spastmarie.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  hello@spastmarie.com
+                <a
+                  href="mailto:Sherrymarie26@gmail.com"
+                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                >
+                  Sherrymarie26@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                 <div className="text-sm text-muted-foreground">
-                  <p>Mon - Fri: 9am - 7pm</p>
-                  <p>Sat: 10am - 5pm</p>
-                  <p>Sun: Closed</p>
+                  <p>Mon - Thu: 10:30 AM - 2:30 PM</p>
+                  <p>Evenings available (last apt 6-7 PM)</p>
+                  <p>Fri - Sun: Closed</p>
                 </div>
               </li>
             </ul>
@@ -110,10 +106,16 @@ export function Footer() {
             {`\u00A9 ${new Date().getFullYear()} Spa St. Marie. All rights reserved.`}
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-primary">
+            <a
+              href="#"
+              className="text-sm text-muted-foreground transition-colors hover:text-primary"
+            >
               Privacy Policy
             </a>
-            <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-primary">
+            <a
+              href="#"
+              className="text-sm text-muted-foreground transition-colors hover:text-primary"
+            >
               Terms of Service
             </a>
           </div>

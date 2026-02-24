@@ -2,27 +2,16 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Check } from "lucide-react"
-import { useState } from "react"
+import { ArrowRight, Check, Mail, Clock, DollarSign } from "lucide-react"
 
 const benefits = [
-  "Free consultation with no obligation",
   "Personalized treatment plan",
   "Science-backed, proven technology",
   "Zero downtime or recovery",
+  "$310 for 6 sessions (save $80)",
 ]
 
 export function FinalCTA() {
-  const [email, setEmail] = useState("")
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (email) {
-      setSubmitted(true)
-    }
-  }
-
   return (
     <section id="contact" className="relative overflow-hidden bg-primary py-24 lg:py-32">
       {/* Decorative elements */}
@@ -43,8 +32,8 @@ export function FinalCTA() {
               Ready to start your transformation?
             </h2>
             <p className="mb-10 text-lg text-primary-foreground/80 leading-relaxed">
-              Book your free consultation today and discover which treatments are right for your
-              goals. No pressure, no commitment -- just expert guidance.
+              Book your session today and discover the treatments that are right for your goals.
+              Email Jessy directly to get started.
             </p>
           </motion.div>
 
@@ -53,39 +42,52 @@ export function FinalCTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex flex-col items-center gap-6"
           >
-            {submitted ? (
-              <div className="rounded-2xl border border-white/20 bg-white/10 p-8 backdrop-blur-sm">
-                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white/20">
-                  <Check className="h-7 w-7 text-primary-foreground" />
-                </div>
-                <h3 className="mb-2 font-serif text-xl font-semibold text-primary-foreground">
-                  We received your request
-                </h3>
-                <p className="text-primary-foreground/80">
-                  We will be in touch within 24 hours to book your free consultation.
-                </p>
+            <Button
+              size="lg"
+              className="rounded-full bg-white px-10 py-6 text-lg text-primary hover:bg-white/90"
+              asChild
+            >
+              <a href="mailto:Sherrymarie26@gmail.com">
+                <Mail className="mr-2 h-5 w-5" />
+                Email Jessy to Book
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
+            </Button>
+            <a
+              href="mailto:Sherrymarie26@gmail.com"
+              className="text-primary-foreground/70 underline underline-offset-4 transition-colors hover:text-primary-foreground"
+            >
+              Sherrymarie26@gmail.com
+            </a>
+          </motion.div>
+
+          {/* Schedule & Pricing Info */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mx-auto mt-10 grid max-w-lg gap-4 rounded-2xl border border-white/20 bg-white/10 p-6 text-left backdrop-blur-sm sm:grid-cols-2"
+          >
+            <div className="flex items-start gap-3">
+              <Clock className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+              <div>
+                <p className="font-semibold text-primary-foreground">Hours</p>
+                <p className="text-sm text-primary-foreground/70">Mon - Thu: 10:30 AM - 2:30 PM</p>
+                <p className="text-sm text-primary-foreground/70">Evenings available (last apt 6-7 PM)</p>
+                <p className="text-sm text-primary-foreground/70">Fri - Sun: Closed</p>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="mx-auto flex max-w-md flex-col gap-3 sm:flex-row">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  required
-                  className="flex-1 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-primary-foreground placeholder:text-primary-foreground/50 backdrop-blur-sm focus:border-white/40 focus:outline-none focus:ring-2 focus:ring-white/20"
-                />
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="rounded-full bg-white px-8 text-primary hover:bg-white/90"
-                >
-                  Get Started
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </form>
-            )}
+            </div>
+            <div className="flex items-start gap-3">
+              <DollarSign className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+              <div>
+                <p className="font-semibold text-primary-foreground">Pricing</p>
+                <p className="text-sm text-primary-foreground/70">6 sessions: $310</p>
+                <p className="text-sm text-primary-foreground/70">Single session: $55</p>
+              </div>
+            </div>
           </motion.div>
 
           <motion.div

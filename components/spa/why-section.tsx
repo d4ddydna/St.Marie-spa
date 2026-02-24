@@ -12,9 +12,9 @@ const reasons = [
   },
   {
     icon: Sparkles,
-    title: "Visible Results in 4-6 Sessions",
+    title: "Visible Results in 6 Sessions",
     description:
-      "Most clients see measurable results within their first few treatments. Progressive improvements continue over the following weeks as your body responds.",
+      "Most clients see measurable results within their first few treatments. 6 sessions completed over 3 weeks (twice a week) for optimal, lasting results.",
   },
   {
     icon: FlaskConical,

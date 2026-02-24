@@ -1,46 +1,40 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useState, useRef, useCallback } from "react"
 import Image from "next/image"
-import { GripVertical } from "lucide-react"
+
+const results = [
+  {
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ec1b78d4-0644-45c8-9f82-35b778d14e5d-rgubNsqRq0CtwqWuNaI2hYSXG4mShu.jpg",
+    alt: "Before and after body contouring - 6 sessions",
+    caption: "Body Contouring -- 6 sessions over 3 weeks",
+  },
+  {
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/25c7edc0-4c85-42ff-ad75-e9581157b609-dJBKXiBAChX7DX79IrZ3fx3xLAuDPW.jpg",
+    alt: "7 inches down and feeling great - real client results",
+    caption: "7 inches down -- real client results",
+  },
+]
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.25, 0.4, 0.25, 1] },
+  },
+}
 
 export function BeforeAfter() {
-  const [sliderPosition, setSliderPosition] = useState(50)
-  const containerRef = useRef<HTMLDivElement>(null)
-  const isDragging = useRef(false)
-
-  const handleMove = useCallback((clientX: number) => {
-    if (!containerRef.current) return
-    const rect = containerRef.current.getBoundingClientRect()
-    const x = Math.max(0, Math.min(clientX - rect.left, rect.width))
-    const percentage = (x / rect.width) * 100
-    setSliderPosition(percentage)
-  }, [])
-
-  const handleMouseDown = useCallback(() => {
-    isDragging.current = true
-  }, [])
-
-  const handleMouseUp = useCallback(() => {
-    isDragging.current = false
-  }, [])
-
-  const handleMouseMove = useCallback(
-    (e: React.MouseEvent) => {
-      if (!isDragging.current) return
-      handleMove(e.clientX)
-    },
-    [handleMove]
-  )
-
-  const handleTouchMove = useCallback(
-    (e: React.TouchEvent) => {
-      handleMove(e.touches[0].clientX)
-    },
-    [handleMove]
-  )
-
   return (
     <section id="results" className="bg-secondary/50 py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -58,77 +52,81 @@ export function BeforeAfter() {
             See the transformation
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-muted-foreground leading-relaxed">
-            Drag the slider to compare before and after results from our body contouring treatments.
+            Real before and after photos from our clients. Results achieved through our 6-session
+            treatment programs.
           </p>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="mx-auto max-w-3xl"
+          className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2"
         >
-          <div
-            ref={containerRef}
-            className="relative aspect-[4/3] cursor-col-resize select-none overflow-hidden rounded-2xl border border-border shadow-xl"
-            onMouseDown={handleMouseDown}
-            onMouseUp={handleMouseUp}
-            onMouseLeave={handleMouseUp}
-            onMouseMove={handleMouseMove}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleMouseUp}
-            role="slider"
-            aria-label="Before and after comparison slider"
-            aria-valuenow={Math.round(sliderPosition)}
-            aria-valuemin={0}
-            aria-valuemax={100}
-          >
-            {/* After Image (full width behind) */}
-            <Image
-              src="/images/after-treatment.jpg"
-              alt="After body contouring treatment"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 768px"
-            />
-
-            {/* Before Image (clipped) */}
-            <div
-              className="absolute inset-0 overflow-hidden"
-              style={{ width: `${sliderPosition}%` }}
+          {results.map((result) => (
+            <motion.div
+              key={result.alt}
+              variants={itemVariants}
+              className="overflow-hidden rounded-2xl border border-border bg-card shadow-lg"
             >
-              <Image
-                src="/images/before-treatment.jpg"
-                alt="Before body contouring treatment"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 768px"
-              />
-            </div>
-
-            {/* Labels */}
-            <span className="absolute top-4 left-4 rounded-full bg-black/60 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">
-              Before
-            </span>
-            <span className="absolute top-4 right-4 rounded-full bg-black/60 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">
-              After
-            </span>
-
-            {/* Slider Handle */}
-            <div
-              className="absolute top-0 bottom-0 z-10 w-1 bg-white shadow-lg"
-              style={{ left: `${sliderPosition}%`, transform: "translateX(-50%)" }}
-            >
-              <div className="absolute top-1/2 left-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-white bg-primary shadow-lg">
-                <GripVertical className="h-4 w-4 text-primary-foreground" />
+              <div className="relative aspect-square overflow-hidden">
+                <Image
+                  src={result.image}
+                  alt={result.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
-            </div>
-          </div>
+              <div className="p-4 text-center">
+                <p className="text-sm text-muted-foreground">{result.caption}</p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
 
-          <p className="mt-4 text-center text-sm text-muted-foreground">
-            Body Contouring -- 6 sessions over 8 weeks
+        {/* Treatment photos gallery */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mx-auto mt-12 max-w-5xl"
+        >
+          <p className="mb-6 text-center text-sm font-medium uppercase tracking-[0.2em] text-primary">
+            Treatments in Action
           </p>
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+            {[
+              {
+                src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/0ddc0390-8e13-42c0-b3f9-65e0745c6a6d-oUHg4hyYOBsIHBSU1RLT8A64a1umqy.jpg",
+                alt: "EMS body contouring treatment session",
+              },
+              {
+                src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5957bbfe-dfae-4413-a7dc-bca0f067097f-p9GrF5bJ6y9nbLmSVuXdHKUsoBnNaE.jpg",
+                alt: "EMS belly treatment session",
+              },
+              {
+                src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a22747e4-049d-44b0-bf16-22f7575671c1-cV94D0BTwK6He4R9elCA8dpp7OiBNm.jpg",
+                alt: "EMS booty lift treatment session",
+              },
+              {
+                src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/d7018526-564d-421d-9306-403a0c68dfe1-n97rx5Iag2vgwvmoOnCgWYdTereozm.jpg",
+                alt: "Spa St. Marie treatment room",
+              },
+            ].map((photo) => (
+              <div key={photo.alt} className="relative aspect-square overflow-hidden rounded-xl border border-border">
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                />
+              </div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

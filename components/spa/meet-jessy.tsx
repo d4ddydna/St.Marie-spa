@@ -29,9 +29,9 @@ function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: str
 }
 
 const stats = [
-  { value: 500, suffix: "+", label: "Happy Clients" },
-  { value: 8, suffix: "+", label: "Years Experience" },
-  { value: 4000, suffix: "+", label: "Treatments Delivered" },
+  { value: 5, suffix: "+", label: "Years Experience" },
+  { value: 500, suffix: "+", label: "Treatments Delivered" },
+  { value: 100, suffix: "%", label: "Dedication" },
 ]
 
 export function MeetJessy() {
@@ -49,18 +49,18 @@ export function MeetJessy() {
           >
             <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
               <Image
-                src="/images/jessy-portrait.jpg"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/b656e57c-0bfb-40cf-b27c-3e268e8d8e89-xU3d1yrw2go5zFcjQURNVgc9LERfTs.jpg"
                 alt="Jessy, founder of Spa St. Marie"
                 fill
-                className="object-cover"
+                className="object-cover object-top"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 rounded-xl border border-border bg-card p-6 shadow-xl lg:-right-10">
               <p className="font-serif text-2xl font-semibold text-primary">
-                <AnimatedCounter target={500} suffix="+" />
+                <AnimatedCounter target={5} suffix="+" />
               </p>
-              <p className="text-sm text-muted-foreground">Happy clients & counting</p>
+              <p className="text-sm text-muted-foreground">Years of experience</p>
             </div>
           </motion.div>
 
@@ -84,9 +84,9 @@ export function MeetJessy() {
                 -- without the risks, recovery, or price tag of surgery.
               </p>
               <p>
-                With over 8 years of experience in non-surgical aesthetics, she has personally
-                helped hundreds of women transform their confidence. Every client who walks
-                through our doors receives the same care, honesty, and dedication that Jessy
+                With over 5 years of experience in non-surgical aesthetics, she has personally
+                helped countless women transform their confidence. Every client who walks
+                through the door receives the same care, honesty, and dedication that Jessy
                 would want for herself.
               </p>
               <p>
