@@ -30,6 +30,33 @@ export function HeroSection() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-white/10 to-white/40" />
+
+        {/* Ethereal Ambient Glows (Inspired by reference) */}
+        <motion.div 
+          animate={{ 
+            opacity: [0.3, 0.5, 0.3],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-[10%] -right-[10%] h-[600px] w-[600px] rounded-full bg-[#d8d1ff]/40 blur-[130px]" 
+        />
+        <motion.div 
+          animate={{ 
+            opacity: [0.4, 0.6, 0.4],
+            scale: [1.2, 1, 1.2],
+          }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute -bottom-[20%] -left-[10%] h-[700px] w-[700px] rounded-full bg-[#f3e8ff]/50 blur-[140px]" 
+        />
+        <motion.div 
+          animate={{ 
+            opacity: [0.3, 0.5, 0.3],
+            x: [0, 30, 0],
+            y: [0, -20, 0]
+          }}
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute left-[5%] top-[25%] h-[550px] w-[550px] rounded-full bg-[#ffdfcf]/40 blur-[120px]" 
+        />
       </motion.div>
 
       {/* Content */}
