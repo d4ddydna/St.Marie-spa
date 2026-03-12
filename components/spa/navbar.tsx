@@ -47,7 +47,7 @@ export function Navbar() {
           <a href="/" className="flex items-center gap-2">
             <div className="relative h-14 w-14 overflow-hidden">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo%20trans%20bg-xbAaMNwxYvbUlvwLsdZgnrV9TEFuZH.png"
+                src="/logo trans bg.png"
                 alt="Spa St. Marie logo"
                 fill
                 className="object-contain"
