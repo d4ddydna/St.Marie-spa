@@ -19,8 +19,8 @@ export function HeroSection() {
 
   return (
     <section ref={ref} className="relative flex min-h-screen items-center overflow-hidden">
-      {/* Background Image with Parallax */}
-      <motion.div className="absolute inset-0 z-0" style={{ y }}>
+      {/* Fixed Background Image (No Scroll) */}
+      <div className="absolute inset-0 z-0 h-screen w-full">
         <Image
           src="/BGHERO.jpeg"
           alt="Spa St. Marie floral background"
@@ -29,35 +29,35 @@ export function HeroSection() {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-white/10 to-white/40" />
-
-        {/* Ethereal Ambient Glows (Inspired by reference) */}
+        <div className="absolute inset-0 bg-white/20" />
+        
+        {/* Intense Ambient Glows (Inspired by reference) */}
         <motion.div 
           animate={{ 
-            opacity: [0.3, 0.5, 0.3],
+            opacity: [0.6, 0.8, 0.6],
             scale: [1, 1.2, 1],
           }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-[10%] -right-[10%] h-[600px] w-[600px] rounded-full bg-[#d8d1ff]/40 blur-[130px]" 
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-[10%] -right-[10%] h-[700px] w-[700px] rounded-full bg-[#c7bcff] opacity-70 blur-[130px]" 
+        />
+        <motion.div 
+          animate={{ 
+            opacity: [0.5, 0.7, 0.5],
+            scale: [1.2, 1, 1.2],
+          }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute -bottom-[10%] -left-[10%] h-[800px] w-[800px] rounded-full bg-[#e9d5ff] opacity-60 blur-[140px]" 
         />
         <motion.div 
           animate={{ 
             opacity: [0.4, 0.6, 0.4],
-            scale: [1.2, 1, 1.2],
+            x: [0, 40, 0],
+            y: [0, -30, 0]
           }}
-          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute -bottom-[20%] -left-[10%] h-[700px] w-[700px] rounded-full bg-[#f3e8ff]/50 blur-[140px]" 
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute left-[0%] top-[20%] h-[600px] w-[600px] rounded-full bg-[#ffd8c4] opacity-50 blur-[120px]" 
         />
-        <motion.div 
-          animate={{ 
-            opacity: [0.3, 0.5, 0.3],
-            x: [0, 30, 0],
-            y: [0, -20, 0]
-          }}
-          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute left-[5%] top-[25%] h-[550px] w-[550px] rounded-full bg-[#ffdfcf]/40 blur-[120px]" 
-        />
-      </motion.div>
+      </div>
 
       {/* Content */}
       <motion.div
