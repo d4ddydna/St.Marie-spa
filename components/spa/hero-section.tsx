@@ -22,7 +22,7 @@ export function HeroSection() {
       {/* Fixed Background Image (No Scroll) */}
       <div className="absolute inset-0 z-0 h-screen w-full">
         <Image
-          src="/BGHERO.jpeg"
+          src="/100422.jpg"
           alt="Spa St. Marie floral background"
           fill
           className="object-cover"
@@ -30,35 +30,35 @@ export function HeroSection() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-white/10" />
-        
+
         {/* Intense Ambient Glows (Inspired by reference) */}
         {/* Right Side Glow - Softened & Pushed further right to clear the subject */}
-        <motion.div 
-          animate={{ 
+        <motion.div
+          animate={{
             opacity: [0.3, 0.5, 0.3],
             scale: [1, 1.1, 1],
           }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-[5%] -right-[15%] h-[600px] w-[600px] rounded-full bg-[#c7bcff] blur-[140px] mix-blend-multiply sm:mix-blend-normal" 
+          className="absolute -top-[5%] -right-[15%] h-[600px] w-[600px] rounded-full bg-[#c7bcff] blur-[140px] mix-blend-multiply sm:mix-blend-normal"
         />
-        
+
         {/* Left Side Glows - Restored to stronger previous version */}
-        <motion.div 
-          animate={{ 
+        <motion.div
+          animate={{
             opacity: [0.5, 0.7, 0.5],
             scale: [1.2, 1, 1.2],
           }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute -bottom-[10%] -left-[10%] h-[800px] w-[800px] rounded-full bg-[#e9d5ff] opacity-60 blur-[140px]" 
+          className="absolute -bottom-[10%] -left-[10%] h-[800px] w-[800px] rounded-full bg-[#e9d5ff] opacity-60 blur-[140px]"
         />
-        <motion.div 
-          animate={{ 
+        <motion.div
+          animate={{
             opacity: [0.4, 0.6, 0.4],
             x: [0, 40, 0],
             y: [0, -30, 0]
           }}
           transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute left-[0%] top-[20%] h-[600px] w-[600px] rounded-full bg-[#ffd8c4] opacity-50 blur-[120px]" 
+          className="absolute left-[0%] top-[20%] h-[600px] w-[600px] rounded-full bg-[#ffd8c4] opacity-50 blur-[120px]"
         />
 
         {/* Central White Mask for Mobile Clarity */}
