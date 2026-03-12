@@ -9,10 +9,6 @@ const _inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 export const metadata: Metadata = {
   title: 'Spa St. Marie | Non-Surgical Body Sculpting & EMS Facials | Montreal',
   description: 'Advanced non-surgical body sculpting, EMS facials, and body contouring in Cote St. Luc, Montreal. Science-backed treatments for visible, lasting results. Book your free consultation today.',
-  icons: {
-    icon: '/favicon.ico',
-    apple: '/favicon.ico',
-  },
 }
 
 export default function RootLayout({
