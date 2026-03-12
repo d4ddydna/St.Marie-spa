@@ -9,7 +9,7 @@ const services = [
     title: "EMS Facial",
     description:
       "Sculpt and lift your facial contours with advanced electrical muscle stimulation. Tighten skin, reduce fine lines, and reveal a naturally lifted look.",
-    image: "/Ems facial.jpg",
+    image: "/ems.jpg",
     tag: "Most Popular",
     duration: "30 min",
   },

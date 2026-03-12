@@ -42,14 +42,14 @@ export function HeroSection() {
           className="absolute -top-[5%] -right-[15%] h-[600px] w-[600px] rounded-full bg-[#c7bcff] blur-[140px] mix-blend-multiply sm:mix-blend-normal" 
         />
         
-        {/* Left Side Glows - Kept strong as requested */}
+        {/* Left Side Glows - Restored to stronger previous version */}
         <motion.div 
           animate={{ 
             opacity: [0.5, 0.7, 0.5],
-            scale: [1.1, 1, 1.1],
+            scale: [1.2, 1, 1.2],
           }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute -bottom-[10%] -left-[10%] h-[800px] w-[800px] rounded-full bg-[#e9d5ff] blur-[150px]" 
+          className="absolute -bottom-[10%] -left-[10%] h-[800px] w-[800px] rounded-full bg-[#e9d5ff] opacity-60 blur-[140px]" 
         />
         <motion.div 
           animate={{ 
@@ -58,7 +58,7 @@ export function HeroSection() {
             y: [0, -30, 0]
           }}
           transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute left-[0%] top-[20%] h-[600px] w-[600px] rounded-full bg-[#ffd8c4] blur-[130px]" 
+          className="absolute left-[0%] top-[20%] h-[600px] w-[600px] rounded-full bg-[#ffd8c4] opacity-50 blur-[120px]" 
         />
 
         {/* Central White Mask for Mobile Clarity */}
