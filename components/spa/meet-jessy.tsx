@@ -1,0 +1,134 @@
+"use client"
+
+import { motion, useSpring, useMotionValue, useInView } from "framer-motion"
+import { useRef, useEffect } from "react"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { Facebook } from "lucide-react"
+
+function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: string }) {
+  const ref = useRef<HTMLSpanElement>(null)
+  const motionValue = useMotionValue(0)
+  const springValue = useSpring(motionValue, { stiffness: 50, damping: 30 })
+  const isInView = useInView(ref, { once: true })
+
+  useEffect(() => {
+    if (isInView) {
+      motionValue.set(target)
+    }
+  }, [isInView, motionValue, target])
+
+  useEffect(() => {
+    const unsubscribe = springValue.on("change", (latest) => {
+      if (ref.current) {
+        ref.current.textContent = Math.floor(latest).toLocaleString() + suffix
+      }
+    })
+    return unsubscribe
+  }, [springValue, suffix])
+
+  return <span ref={ref}>{"0" + suffix}</span>
+}
+
+const stats = [
+  { value: 7, suffix: "+", label: "Years Experience" },
+  { value: 300, suffix: "+", label: "Treatments Delivered" },
+  { value: 100, suffix: "%", label: "Dedication" },
+]
+
+export function MeetJessy() {
+  return (
+    <section id="about" className="bg-secondary/50 py-24 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+          {/* Image */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, ease: [0.25, 0.4, 0.25, 1] }}
+            className="relative"
+          >
+            <div className="group relative aspect-[3/4] overflow-hidden rounded-2xl">
+              <Image
+                src="/jessy portrait.png"
+                alt="Jessy, founder of Spa St. Marie"
+                fill
+                className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+            <div className="absolute -bottom-6 -right-6 rounded-xl border border-border bg-card p-6 shadow-xl lg:-right-10">
+              <p className="font-serif text-2xl font-semibold text-primary">
+                <AnimatedCounter target={7} suffix="+" />
+              </p>
+              <p className="text-sm text-muted-foreground">Years of experience</p>
+            </div>
+          </motion.div>
+
+          {/* Content */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7, ease: [0.25, 0.4, 0.25, 1] }}
+          >
+            <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-primary">
+              Meet Jessy
+            </p>
+            <h2 className="mb-6 font-serif text-3xl font-semibold leading-tight text-foreground md:text-4xl lg:text-5xl text-balance">
+              Passionate about helping you feel your best
+            </h2>
+            <div className="mb-8 space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                As a Montreal native and body sculpting specialist, Jessy founded Spa St. Marie
+                with a simple mission: give every woman access to treatments that actually work
+                -- without the risks, recovery, or price tag of surgery.
+              </p>
+              <p>
+                With over 7 years of experience in non-surgical aesthetics, she has personally
+                helped countless women transform their confidence. Every client who walks
+                through the door receives the same care, honesty, and dedication that Jessy
+                would want for herself.
+              </p>
+              <p>
+                {`"I don't believe in one-size-fits-all. Every body is different, and every
+                treatment plan should be, too. My job is to listen to your goals and guide you
+                to the results you deserve."`}
+              </p>
+            </div>
+
+            {/* Facebook CTA */}
+            <div className="mb-8">
+              <Button
+                size="lg"
+                className="rounded-full bg-[#1877F2] px-8 text-white hover:bg-[#1877F2]/90 transition-transform hover:scale-105 active:scale-95"
+                asChild
+              >
+                <a
+                  href="https://www.facebook.com/mariieejessy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Facebook className="mr-2 h-5 w-5" />
+                  Message Jessy on Facebook
+                </a>
+              </Button>
+            </div>
+
+            <div className="grid grid-cols-3 gap-6">
+              {stats.map((stat) => (
+                <div key={stat.label}>
+                  <p className="font-serif text-2xl font-semibold text-foreground md:text-3xl">
+                    <AnimatedCounter target={stat.value} suffix={stat.suffix} />
+                  </p>
+                  <p className="text-sm text-muted-foreground">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  )
+}
