@@ -29,24 +29,27 @@ export function HeroSection() {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-white/20" />
+        <div className="absolute inset-0 bg-white/10" />
         
         {/* Intense Ambient Glows (Inspired by reference) */}
+        {/* Right Side Glow - Softened & Pushed further right to clear the subject */}
         <motion.div 
           animate={{ 
-            opacity: [0.6, 0.8, 0.6],
-            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3],
+            scale: [1, 1.1, 1],
           }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-[10%] -right-[10%] h-[700px] w-[700px] rounded-full bg-[#c7bcff] opacity-70 blur-[130px]" 
+          className="absolute -top-[5%] -right-[15%] h-[600px] w-[600px] rounded-full bg-[#c7bcff] blur-[140px] mix-blend-multiply sm:mix-blend-normal" 
         />
+        
+        {/* Left Side Glows - Kept strong as requested */}
         <motion.div 
           animate={{ 
             opacity: [0.5, 0.7, 0.5],
-            scale: [1.2, 1, 1.2],
+            scale: [1.1, 1, 1.1],
           }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute -bottom-[10%] -left-[10%] h-[800px] w-[800px] rounded-full bg-[#e9d5ff] opacity-60 blur-[140px]" 
+          className="absolute -bottom-[10%] -left-[10%] h-[800px] w-[800px] rounded-full bg-[#e9d5ff] blur-[150px]" 
         />
         <motion.div 
           animate={{ 
@@ -55,8 +58,11 @@ export function HeroSection() {
             y: [0, -30, 0]
           }}
           transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute left-[0%] top-[20%] h-[600px] w-[600px] rounded-full bg-[#ffd8c4] opacity-50 blur-[120px]" 
+          className="absolute left-[0%] top-[20%] h-[600px] w-[600px] rounded-full bg-[#ffd8c4] blur-[130px]" 
         />
+
+        {/* Central White Mask for Mobile Clarity */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,white_0%,transparent_70%)] opacity-60 md:hidden" />
       </div>
 
       {/* Content */}
